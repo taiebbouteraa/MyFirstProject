@@ -190,7 +190,6 @@
 }
 /*form section*/
 form{
-    width: 800px;
     margin: 50px auto;
 }
 .form-row{
@@ -199,7 +198,9 @@ form{
 .form-section{
     text-align: center;
 }
-
+textarea.form-control{
+    margin: auto;
+}
 .send-form{
     text-align: center;
 }
@@ -238,7 +239,6 @@ input::-webkit-inner-spin-button {
 }
 @media screen and (max-width: 767px) {
     .mb-3{
-        width: 500px;
         margin: auto;
     }
     .about{
