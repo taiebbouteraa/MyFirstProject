@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My First Project</title>
+    <title>My First Project v2</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous"> <!--bootstrap -->
     <script src="https://kit.fontawesome.com/c16526c31d.js" crossorigin="anonymous"></script> <!-- fontawsome -->
     <link rel="stylesheet" href="./css/style.css"> <!-- CSS -->
 </head>
 <body>
     <head>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="MyNav">
             <a class="navbar-brand" href="#">Navbar</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
@@ -25,16 +25,19 @@
 
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
-                  <a class="nav-link" href="#upper-page">Home <span class="sr-only">(current)</span></a>
+              <ul class="navbar-nav ml-auto" id="my-links">
+                <li class="nav-item active" id="home">
+                  <a class="nav-link" href="#upper-page">Home<span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item active">
+                <li class="nav-item" id="compare">
                   <a class="nav-link" href="#compare-app">Compare</a>
                 </li>
                 
-                <li class="nav-item active">
+                <li class="nav-item " id="contactus">
                   <a class="nav-link" href="#contact-message">Contact us</a>
+                </li>
+                <li>
+                  <span onclick="hideShowCart()"><i class="fas fa-shopping-cart" id="open-cart" ></i></span>
                 </li>
               </ul>
               
@@ -90,10 +93,10 @@
         <h1 class="new-section comp-section">Chose two phones to compare</h1>
     </div>
     <div class="phones-container">
-        <div class="phones">
+        <div class="phones" id="phones">
             <div class="phoneID">
                 <div id="phone1" class="a-phone">
-                    <img src="./res/note20.jpg" alt="Samsung Galaxy Note20 Ultra">
+                    <img src="./res/note20.jpg" alt="Samsung Galaxy Note20 Ultra" id="image1">
                     <h4 class="brand" id="im1">Samsung Galaxy Note20 Ultra</h4>
                     <div class="phone-prop">
                         <span class="batterie" id="bat1">4500</span><span> mAh</span>
@@ -103,12 +106,15 @@
                         <span class="frontalcam" id="fcam1">10</span><span> MP</span>
                         <span class="price" id="price1">1450</span><span> $</span>
                     </div>
-                    <button type="button" class="btn btn-primary btn-lg btn-block btn-sm" id="add-ph-1" onclick="addPone1()">Compare phone</button>
+                    <div class="compare-buy">
+                      <button type="button" class="btn btn-primary btn-block btn-sm" id="add-ph-1" onclick="addPone1()">Compare</button>
+                      <button type="button" class="btn btn-success" id="buy-ph-1" onclick="buyPhone1()">Buy</button>
+                    </div>
                 </div>
             </div>
             <div class="phoneID">
                 <div id="phone2" class="a-phone">
-                    <img src="./res/iphone-12-pro-max.jpg" alt="Apple iPhone 12 Pro Max">
+                    <img src="./res/iphone-12-pro-max.jpg" alt="Apple iPhone 12 Pro Max" id="image2">
                     <h4 class="brand" id="im2">Apple iPhone 12 Pro Max</h4>
                     <div class="phone-prop">
                         <span class="batterie" id="bat2">3687</span><span> mAh</span>
@@ -118,12 +124,15 @@
                         <span class="frontalcam" id="fcam2">12</span><span> MP</span>
                         <span class="price" id="price2">1400</span><span> $</span>
                     </div>
-                    <button type="button" class="btn btn-primary btn-lg btn-block btn-sm comp-ph" id="add-ph-2" onclick="addPone2()">Compare phone</button>
+                    <div class="compare-buy">
+                      <button type="button" class="btn btn-primary btn-lg btn-block btn-sm comp-ph" id="add-ph-2" onclick="addPone2()">Compare</button>
+                      <button type="button" class="btn btn-success" id="buy-ph-2" onclick="buyPhone2()">Buy</button>
+                    </div>
                 </div>
             </div>
             <div class="phoneID">
                 <div id="phone3" class="a-phone">
-                    <img src="./res/huawei-p30-pro.jpg" alt="Huawei P30 Pro">
+                    <img src="./res/huawei-p30-pro.jpg" alt="Huawei P30 Pro" id="image3">
                     <h4 class="brand" id="im3">Huawei P30 Pro</h4>
                     <div class="phone-prop">
                         <span class="batterie" id="bat3">4200</span><span> mAh</span>
@@ -133,12 +142,15 @@
                         <span class="frontalcam" id="fcam3">32</span><span> MP</span>
                         <span class="price" id="price3">800</span><span> $</span>
                     </div>
-                    <button type="button" class="btn btn-primary btn-lg btn-block btn-sm comp-ph" id="add-ph-3" onclick="addPone3()">Compare phone</button>
+                    <div class="compare-buy">
+                      <button type="button" class="btn btn-primary btn-lg btn-block btn-sm comp-ph" id="add-ph-3" onclick="addPone3()">Compare</button>
+                      <button type="button" class="btn btn-success" id="buy-ph-3" onclick="buyPhone3()">Buy</button>
+                    </div>
                 </div>
             </div>
             <div class="phoneID">
                 <div id="phone4" class="a-phone">
-                    <img src="./res/Xiaomi Mi 11 Ultra.jpg" alt="Xiaomi Mi 11 Ultra">
+                    <img src="./res/Xiaomi Mi 11 Ultra.jpg" alt="Xiaomi Mi 11 Ultra" id="image4">
                     <h4 class="brand" id="im4">Xiaomi Mi 11 Ultra</h4>
                     <div class="phone-prop">
                         <span class="batterie"  id="bat4">5000</span><span> mAh</span>
@@ -148,12 +160,15 @@
                         <span class="frontalcam" id="fcam4">20</span><span> MP</span>
                         <span class="price" id="price4">1100</span><span> $</span>
                     </div>
-                    <button type="button" class="btn btn-primary btn-lg btn-block btn-sm comp-ph" id="add-ph-4" onclick="addPone4()">Compare phone</button>
+                    <div class="compare-buy">
+                      <button type="button" class="btn btn-primary btn-lg btn-block btn-sm comp-ph" id="add-ph-4" onclick="addPone4()">Compare</button>
+                      <button type="button" class="btn btn-success" id="buy-ph-4" onclick="buyPhone4()">Buy</button>
+                    </div>
                 </div>
             </div>
             <div class="phoneID">
                 <div id="phone5" class="a-phone">
-                    <img src="./res/OnePlus 9 Pro.jpg" alt="OnePlus 9 Pro">
+                    <img src="./res/OnePlus 9 Pro.jpg" alt="OnePlus 9 Pro" id="image5">
                     <h4 class="brand"  id="im5">OnePlus 9 Pro</h4>
                     <div class="phone-prop">
                         <span class="batterie" id="bat5">4500</span><span> mAh</span>
@@ -163,12 +178,15 @@
                         <span class="frontalcam" id="fcam5">16</span><span> MP</span>
                         <span class="price" id="price5">1070</span><span> $</span>
                     </div>
-                    <button type="button" class="btn btn-primary btn-lg btn-block btn-sm comp-ph" id="add-ph-5" onclick="addPone5()">Compare phone</button>
+                    <div class="compare-buy">
+                      <button type="button" class="btn btn-primary btn-lg btn-block btn-sm comp-ph" id="add-ph-5" onclick="addPone5()">Compare</button>
+                      <button type="button" class="btn btn-success" id="buy-ph-5" onclick="buyPhone5()">Buy</button>
+                    </div>
                 </div>
             </div>
             <div class="phoneID">
                 <div id="phone6" class="a-phone">
-                    <img src="./res/oppo-find-x3-pro.jpg" alt="Oppo Find X3 Pro">
+                    <img src="./res/oppo-find-x3-pro.jpg" alt="Oppo Find X3 Pro" id="image6">
                     <h4 class="brand" id="im6">Oppo Find X3 Pro</h4>
                     <div class="phone-prop">
                         <span class="batterie" id="bat6">4500</span><span> mAh</span>
@@ -178,12 +196,15 @@
                         <span class="frontalcam" id="fcam6">32</span><span> MP</span>
                         <span class="price" id="price6">1177</span><span> $</span>
                     </div>
-                    <button type="button" class="btn btn-primary btn-lg btn-block btn-sm comp-ph" id="add-ph-6" onclick="addPone6()">Compare phone</button>
+                    <div class="compare-buy">
+                      <button type="button" class="btn btn-primary btn-lg btn-block btn-sm comp-ph" id="add-ph-6" onclick="addPone6()">Compare</button>
+                      <button type="button" class="btn btn-success" id="buy-ph-6" onclick="buyPhone6()">Buy</button>
+                    </div>
                 </div>
             </div>
             <div class="phoneID">
                 <div id="phone7" class="a-phone">
-                    <img src="./res/Lenovo Legion Duel 2.jpg" alt="Lenovo Legion Duel 2">
+                    <img src="./res/Lenovo Legion Duel 2.jpg" alt="Lenovo Legion Duel 2" id="image7">
                     <h4 class="brand" id="im7">Lenovo Legion Duel 2</h4>
                     <div class="phone-prop">
                         <span class="batterie" id="bat7">5500</span><span> mAh</span>
@@ -193,12 +214,15 @@
                         <span class="frontalcam" id="fcam7">44</span><span> MP</span>
                         <span class="price" id="price7">1186</span><span> $</span>
                     </div>
-                    <button type="button" class="btn btn-primary btn-lg btn-block btn-sm comp-ph" id="add-ph-7" onclick="addPone7()">Compare phone</button>
+                    <div class="compare-buy">
+                      <button type="button" class="btn btn-primary btn-lg btn-block btn-sm comp-ph" id="add-ph-7" onclick="addPone7()">Compare</button>
+                      <button type="button" class="btn btn-success" id="buy-ph-7" onclick="buyPhone7()">Buy</button>
+                    </div>
                 </div>
             </div>
             <div class="phoneID">
                 <div id="phone8" class="a-phone">
-                    <img src="./res/Asus ROG Phone 5.jpg" alt="Asus ROG Phone 5">
+                    <img src="./res/Asus ROG Phone 5.jpg" alt="Asus ROG Phone 5" id="image8">
                     <h4 class="brand" id="im8">Asus ROG Phone 5</h4>
                     <div class="phone-prop">
                         <span class="batterie" id="bat8">6000</span><span> mAh</span>
@@ -208,12 +232,15 @@
                         <span class="frontalcam" id="fcam8">24</span><span> MP</span>
                         <span class="price" id="price8">1139</span><span> $</span>
                     </div>
-                    <button type="button" class="btn btn-primary btn-lg btn-block btn-sm comp-ph" id="add-ph-8" onclick="addPone8()">Compare phone</button>
+                    <div class="compare-buy">
+                      <button type="button" class="btn btn-primary btn-lg btn-block btn-sm comp-ph" id="add-ph-8" onclick="addPone8()">Compare</button>
+                      <button type="button" class="btn btn-success" id="buy-ph-8" onclick="buyPhone8()">Buy</button>
+                    </div>
                 </div>
             </div>
             <div class="phoneID">
                 <div id="phone9" class="a-phone">
-                    <img src="./res/Google Pixel 5.jpg" alt="Google Pixel 5">
+                    <img src="./res/Google Pixel 5.jpg" alt="Google Pixel 5" id="image1=9">
                     <h4 class="brand" id="im9">Google Pixel 5</h4>
                     <div class="phone-prop">
                         <span class="batterie" id="bat9">4080</span><span> mAh</span>
@@ -223,12 +250,15 @@
                         <span class="frontalcam" id="fcam9">8</span><span> MP</span>
                         <span class="price" id="price9">700</span><span> $</span>
                     </div>
-                    <button type="button" class="btn btn-primary btn-lg btn-block btn-sm comp-ph" id="add-ph-9" onclick="addPone9()">Compare phone</button>
+                    <div class="compare-buy">
+                      <button type="button" class="btn btn-primary btn-lg btn-block btn-sm comp-ph" id="add-ph-9" onclick="addPone9()">Compare</button>
+                      <button type="button" class="btn btn-success" id="buy-ph-9" onclick="buyPhone9()">Buy</button>
+                    </div>
                 </div>
             </div>
             <div class="phoneID">
                 <div id="phone10" class="a-phone">
-                    <img src="./res/Nokia X20.jpg" alt="Nokia X20">
+                    <img src="./res/Nokia X20.jpg" alt="Nokia X20" id="image10">
                     <h4 class="brand" id="im10">Nokia X20</h4>
                     <div class="phone-prop">
                         <span class="batterie" id="bat10">4470</span><span> mAh</span>
@@ -238,13 +268,44 @@
                         <span class="frontalcam" id="fcam10">32</span><span> MP</span>
                         <span class="price" id="price10">600</span><span> $</span>
                     </div>
-                    <button type="button" class="btn btn-primary btn-lg btn-block btn-sm comp-ph" id="add-ph-10" onclick="addPone10()">Compare phone</button>
+                    <div class="compare-buy">
+                      <button type="button" class="btn btn-primary btn-lg btn-block btn-sm comp-ph" id="add-ph-10" onclick="addPone10()">Compare</button>
+                      <button type="button" class="btn btn-success" id="buy-ph-10" onclick="buyPhone10()">Buy</button>
+                    </div>
                 </div>
             </div>
             
         </div>
     </div>
 </section>
+<!-------------------------------------- shopping cart -------------------------------------->
+<section>
+  <div class="my-shop" id="my-shopping-cart">
+    <i class="far fa-times-circle" id="close-cart" onclick="hideShowCart()"></i>
+    <h1>Your cart</h1>
+    <div class="shopping-cart">
+      <div class="cart-items row" id="cart-items">
+        <!------------------------------ cart item ------------------------------>
+        <!------------------------------ cart item end------------------------------>
+
+
+    
+      </div>
+    <div class="cart-total">
+      <span>Total : </span><span class="price" id="cart-total-price">0</span><span> $</span>
+    </div>
+    
+    <div class="purchase">
+    <button type="button" class="btn btn-danger btn-lg" id="cancle-shopping" onclick="removeAllItems()" >Cancel</button>
+    <button type="button" class="btn btn-primary btn-lg" disabled id="buy-items" onclick="buyItems()">Purchase</button>
+    </div>
+  </div>
+
+
+</section>
+
+<!-------------------------------------- shopping cart end -------------------------------------->
+
 <!-- the comparison section -->
 <section id="contact-message">
 <h1 class="new-section">Your comparison</h1>
@@ -308,7 +369,7 @@
 </div>
 </section>
 <!-- form section -->
-<section class="" id="contact-us">
+<section id="contact-us">
 <h1 class="form-section">Have a question or a comment?</h1>
 <h5 class="form-section">please fill the form below</h5>
 <div id="closing-section">
